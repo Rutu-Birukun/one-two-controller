@@ -1,0 +1,33 @@
+# .gitignore
+
+# Build outputs
+build/
+obj/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+
+# IDE/editor metadata
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# CAD / generated assets
+*.stl
+*.step
+*.svg
