@@ -1,19 +1,19 @@
 # Architecture
 
-## Overall Architecture
+## Overall architecture
 
-The design can be organized into the following major blocks:
+The device is best organized into the following major blocks:
 
-- Audio processing and playback subsystem
-- Power and charging subsystem
-- Control and user interface subsystem
-- Storage and media access subsystem
-- Microcontroller or processing subsystem
-- Mechanical enclosure and connectivity subsystem
+- audio subsystem
+- power and charging subsystem
+- control and user interface subsystem
+- storage and media access subsystem
+- MCU processing subsystem
+- mechanical enclosure and connection subsystem
 
-## Suggested Block Diagram
+## Block diagram
 
-```
+```text
 [Power Input / Battery]
           |
           v
@@ -28,31 +28,40 @@ The design can be organized into the following major blocks:
           `---> [Debug / USB / Expansion]
 ```
 
-## Subsystem Notes
+## Subsystem notes
 
-### 1. Power Subsystem
-- Input source may be USB, battery, or both
-- Include safe charging and regulation if battery-backed
-- Keep power rails clean for analog audio and digital logic
+### 1. Power subsystem
+- Accept USB input and optionally battery power
+- Include charging and safe battery management
+- Keep analog and digital rails separate where practical
 
-### 2. Processor Subsystem
-- Use a microcontroller or SoC with enough capability for playback control
-- Include debug and programming ports
-- Prefer a simple, common architecture with strong community support
+### 2. Processor subsystem
+- Use a microcontroller with enough capability for playback, UI, and diagnostics
+- Include programming/debug interfaces
+- Prefer a common architecture with available libraries and example code
 
-### 3. Audio Subsystem
-- Select an audio codec or amplifier path based on output needs
-- Validate speaker/headphone output quality and power draw
-- Avoid unnecessary analog complexity early in the prototype stage
+### 3. Audio subsystem
+- Select a codec and amplifier path according to output needs
+- Validate speaker or headphone output quality early
+- Keep the first prototype simple and easy to debug
 
-### 4. Interface Subsystem
-- Buttons, encoding wheels, display and panel layout all affect usability
-- Keep control logic well-separated from main playback logic
+### 4. Interface subsystem
+- Buttons, knob input, and display choices affect usability directly
+- Keep control logic separate from low-level audio and power behavior
 
-### 5. Storage Subsystem
-- Decide between onboard flash, microSD, or external media support
-- Evaluate cost, reliability, and library support
+### 5. Storage subsystem
+- Evaluate microSD, internal flash, or external media options
+- Choose the approach that best fits the final use case and prototype budget
 
-## Current Architectural Recommendation
+## Recommended architecture direction
 
-Use a modular architecture with a clearly separated MCU, power, audio, and UI layer. This reduces risk and keeps debugging manageable while the concept matures.
+Use a modular architecture with clearly separated MCU, power, audio, interface, and storage layers. This minimizes debugging risk and supports more straightforward firmware development.
+
+## Firmware module layout
+
+- `src/boot/` — startup and initialization
+- `src/audio/` — playback and output logic
+- `src/ui/` — buttons, display, and navigation
+- `src/storage/` — media discovery and file handling
+- `src/power/` — battery and power state tracking
+- `src/debug/` — diagnostics and log output

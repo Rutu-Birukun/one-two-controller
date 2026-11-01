@@ -1,33 +1,28 @@
 # Firmware
 
-This section is intentionally lightweight at this stage. The goal is to define the software structure before coding begins.
+This folder contains a starter firmware project structure for the One Two Controller concept. The purpose is to provide a clean architectural baseline before deeper implementation work begins.
 
-## Firmware Objectives
+## Planned modules
 
-- manage power state and boot sequence
-- handle user input
-- manage playback state and queue operations
-- coordinate audio output
-- support debug and test routines
+- `src/boot/` — initialization and hardware startup
+- `src/audio/` — playback, volume, and output control
+- `src/ui/` — display and control handling
+- `src/storage/` — file discovery and media access
+- `src/power/` — battery monitoring and charging state
+- `src/debug/` — logs and diagnostics
 
-## Planned Module Layout
+## Build system
 
-- `src/boot/` — initialization and system startup
-- `src/audio/` — playback and output control
-- `src/ui/` — buttons, display, knobs, and navigation logic
-- `src/storage/` — media access and file system handling
-- `src/power/` — battery and power-state tracking
-- `src/debug/` — diagnostics and logging
+The default recommendation is PlatformIO for a simple and portable embedded build flow.
 
-## Initial Firmware Plan
+## Starter implementation notes
 
-1. Establish build and hardware bring-up
-2. Validate MCU clocks, GPIO, and basic peripherals
-3. Confirm power rails and stability
-4. Bring up audio output path
-5. Add controls and playback states
-6. Validate storage interface and file access
+The firmware should start with a simple state machine:
+- boot
+- idle
+- playing
+- paused
+- stopped
+- error
 
-## Placeholder
-
-The actual firmware source will be added here as the architecture becomes more concrete.
+This makes the device easier to debug while audio, storage, and controls are being tested.

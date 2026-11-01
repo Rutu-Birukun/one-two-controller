@@ -1,16 +1,20 @@
-# Bill of Materials
+# BOM
 
-This file is a starting point for the BOM. Update as parts are evaluated.
+This file is the working candidate BOM for the initial prototype. Update as parts are reviewed and sourced.
 
 Part Category,Part Name,Reference,Qty,Notes,Status
-Power,Battery Management IC,PMIC,1,Review based on battery chemistry,Planned
-Power,Li-ion Battery,BT1,1,Choose based on runtime target,Planned
-Power,USB-C Connector,USB1,1,For charging/programming,Planned
-Processing,MCU,MCU1,1,Select based on audio and UI needs,Planned
-Audio,Amp IC,AMP1,1,Review based on speaker/output load,Planned
-Audio,3.5mm Jack,JACK1,1,Optional output / headphone interface,Planned
-Storage,microSD Socket,SD1,1,If external media is included,Planned
-Interface,Buttons or Encoder,UI1,N,Depends on final control scheme,Planned
-Mechanical,Enclosure,CASE1,1,3D-print or custom case concept,Planned
-Passive,Decoupling Caps,CAP1,Many,Required for MCU and audio rails,Planned
-Passive,Resistors,RES1,Many,Pull-ups, filters, etc.,Planned
+Power,Li-ion battery,BT1,1,Target runtime to be confirmed,Planned
+Power,USB-C connector,USB1,1,Charging and programming,Planned
+Power,Battery charger IC,CHG1,1,Review for single-cell charging,Planned
+Power,Voltage regulator,REG1,1,Generate clean rails for MCU and audio,Planned
+Processing,MCU,MCU1,1,ESP32 or STM32 depending on architecture,Planned
+Audio,I2S DAC,DAC1,1,Required for clean digital audio output,Planned
+Audio,Audio amplifier,AMP1,1,Choose for target speaker or headphone load,Planned
+Audio,3.5mm jack,JACK1,1,Optional headphone output,Planned
+Storage,microSD socket,SD1,1,Preferred removable media option,Planned
+Interface,Buttons or encoder,UI1,N,Depends on final control scheme,Planned
+Interface,Display,DISP1,1,Optional small OLED or TFT,Planned
+Mechanical,Enclosure,CASE1,1,3D-print or custom prototype case,Planned
+Passive,Decoupling capacitors,CAP1,Many,Required for stable power rails,Planned
+Passive,Resistors,RES1,Many,Pull-ups, filters, and biasing,Planned
+Passive,Inductors/filters,FILT1,Some,Depending on power path,Planned

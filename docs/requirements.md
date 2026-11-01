@@ -1,39 +1,54 @@
 # Requirements
 
-## Product Requirements
+## Product requirements
 
-### Functional Requirements
-- Playback control: start, stop, pause, skip
-- Volume adjustment and mute control
-- Audio output with acceptable signal quality
-- UI and navigation inputs
-- Power management support for portable or USB-powered operation
+### Functional requirements
+- Playback control: start, pause, resume, stop, and skip
+- Volume control and mute behavior
+- Audio output with acceptable signal quality for prototype use
+- Basic navigation and state selection through UI controls
+- Media access from onboard or removable storage
+- Power management for USB and battery-backed operation
 
-### Non-Functional Requirements
-- Reasonable cost for prototype iteration
-- Ease of debugging during firmware development
-- Modular hardware routes for easier testing
-- Good thermal and power stability
-- Simple documentation trail for part selection and design decisions
+### Non-functional requirements
+- Prototype-friendly cost and part availability
+- Good firmware maintainability and debug visibility
+- Separate hardware domains for power, audio, and control
+- Reasonable thermal and power stability during operation
+- Documented BOM decisions and design revision history
 
-## Design Constraints
+## Design constraints
 
-- Prototype-friendly BOM and layout
-- Maintainability of firmware and feature additions
-- Reasonable mechanical form factor
-- Minimal risk of component scarcity in the prototype stage
+- Keep the layout and BOM realistic for prototype iteration
+- Avoid over-engineering the first revision
+- Maintain a practical enclosure size and mechanical approach
+- Minimize part scarcity risk for early builds
+- Align the firmware structure with subsystem boundaries
 
-## Priority Order
+## Priority order
 
 1. Audio playback reliability
 2. Control and UI usability
 3. Power stability and safety
-4. Mechanical design and enclosure fit
+4. Mechanical fit and enclosure clarity
 5. Feature expansion and polish
 
-## Questions to Answer Next
+## User stories
 
-- Which playback and storage technology is the best fit?
-- Will there be an LCD, buttons, rotary control, touch, or a combination?
-- What is the target battery chemistry and runtime?
-- Should the project aim for a board-level prototype or a near-final enclosure prototype?
+- As a user, I want to play audio from a local or removable source.
+- As a user, I want a simple way to change volume and pause/resume playback.
+- As a developer, I want separated firmware modules so I can debug power, media, and UI bugs independently.
+- As a hardware designer, I want a manageable BOM with easy-to-source components.
+- As a tester, I want a clear validation path for audio, power, and user input.
+
+## Questions to answer next
+
+- Which storage approach is the best fit: built-in flash or microSD?
+- Will the device prioritize a speaker, headphone output, or both?
+- Will the UI be button-based, encoder-based, or hybrid?
+- What is the target runtime on battery power?
+- Is the first prototype board-only or near-final enclosure form?
+
+## MVP definition
+
+The initial prototype should support basic playback, UI navigation, and charging/power operation. Advanced features can be deferred until the core hardware path is proven.
